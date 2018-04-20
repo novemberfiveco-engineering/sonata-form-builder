@@ -36,8 +36,8 @@ class FormBuilderExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'json_decode' => new \Twig_Function_Method($this, 'jsonDecode'),
-            'is_array' => new \Twig_Function_Method($this, 'isArray'),
+            'json_decode' => new \Twig_Function_Method('jsonDecode', $this),
+            'is_array' => new \Twig_Function_Method('isArray', $this),
         );
     }
 
