@@ -82,7 +82,6 @@ class FormBuilderBlockService extends BaseBlockService
         $fieldDescription = $this->getFormBuilderAdmin()->getModelManager()->getNewFieldDescriptionInstance($this->formBuilderAdmin->getClass(), 'form_builder');
         $fieldDescription->setAssociationAdmin($this->getFormBuilderAdmin());
         $fieldDescription->setAdmin($formMapper->getAdmin());
-        $fieldDescription->setOption('edit', 'list');
         $fieldDescription->setAssociationMapping(array(
             'fieldName' => 'form_builder',
             'type' => \Doctrine\ORM\Mapping\ClassMetadataInfo::MANY_TO_ONE,
