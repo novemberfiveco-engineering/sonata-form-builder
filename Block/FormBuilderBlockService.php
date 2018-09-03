@@ -82,7 +82,6 @@ class FormBuilderBlockService extends BaseBlockService
         $fieldDescription = $this->getFormBuilderAdmin()->getModelManager()->getNewFieldDescriptionInstance($this->formBuilderAdmin->getClass(), 'form_builder');
         $fieldDescription->setAssociationAdmin($this->getFormBuilderAdmin());
         $fieldDescription->setAdmin($formMapper->getAdmin());
-        $fieldDescription->setOption('edit', 'list');
         $fieldDescription->setAssociationMapping(array(
             'fieldName' => 'form_builder',
             'type' => \Doctrine\ORM\Mapping\ClassMetadataInfo::MANY_TO_ONE,
@@ -124,7 +123,7 @@ class FormBuilderBlockService extends BaseBlockService
 
         $form = $form_pack['form'];
         $success = false;
-        $request = $this->container->get('request');
+        $request = $this->container->get('request_stack')->getCurrentRequest();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

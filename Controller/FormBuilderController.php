@@ -78,7 +78,7 @@ class FormBuilderController extends Controller
     public function submitOperations($formBuilder, $columns)
     {
         $em = $this->getDoctrine()->getManager();
-        $form_submit = $this->container->get('request')->request->all();
+        $form_submit = $this->container->get('request_stack')->getCurrentRequest()->request->all();
 
         /*******************************
          * Submits JSON Object from DB with all previous form builder submits
