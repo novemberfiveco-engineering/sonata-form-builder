@@ -143,7 +143,7 @@ class FormBuilderFactory
             'label' => $elem->fields->label->value,
             'choices' => $elem->fields->options->value,
             'required' => false,
-            'empty_value' => false,
+            'placeholder' => false,
         ));
 
         return array('name' => 'choice_'.$key, 'size' => $this->getSelectedValue($elem->fields->inputsize->value));
@@ -173,7 +173,7 @@ class FormBuilderFactory
             'label' => $elem->fields->label->value,
             'choices' => $elem->fields->radios->value,
             'multiple' => false,
-            'empty_value' => false,
+            'placeholder' => false,
             'required' => false,
             'expanded' => true,
         ));
