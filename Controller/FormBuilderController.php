@@ -139,7 +139,7 @@ class FormBuilderController extends Controller
                 $patterns = array_map(function($key) { return '#<' . $key . '>#';}, array_values($data['headers']));
                 $replyTo = preg_replace($patterns, array_values($data['data']), $formBuilder->getReplyTo());
 
-                $errors = $this->get('validator')->validateValue(
+                $errors = $this->get('validator')->validate(
                     $replyTo,
                     array(
                         new NotBlank(),
